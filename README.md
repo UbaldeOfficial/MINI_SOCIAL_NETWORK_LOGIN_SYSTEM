@@ -91,17 +91,11 @@ http://localhost/assignment6/
 
 
 Use the system
-
 Register a new user or login using existing credentials
-
 Access the dashboard, manage employees (Add/Edit/Delete/View)
-
 Logout when done
-
 Optional: Use “Remember Me” to stay logged in for 30 days
-
 GitHub Repository
-
 https://github.com/UbaldeOfficial/employee-management-system
 
 © 2025 Ubalde Official — Employee Management System. All rights reserved.
