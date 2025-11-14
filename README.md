@@ -73,7 +73,7 @@ Open the XAMPP Control Panel and start:
 - MySQL (for database)  
 
 4. **Set up the database**  
-- Open **phpMyAdmin** at [http://localhost/phpmyadmin](http://localhost/phpmyadmin)  
+- Open **phpMyAdmin** at [http://localhost/phpmyadmin](http://127.0.0.1/assignment6)  
 - Create a new database called `employee_system`  
 - Import `employee_system.sql` from the project folder  
 
