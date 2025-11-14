@@ -64,3 +64,44 @@ A PHP-based Employee Management System with CRUD functionality, authentication, 
 
 2. **Copy project folder**  
    Place the `assignment6` folder into your XAMPP `htdocs` directory:  
+
+C:\xampp\htdocs\assignment6
+
+3. **Start XAMPP services**  
+Open the XAMPP Control Panel and start:  
+- Apache (for PHP)  
+- MySQL (for database)  
+
+4. **Set up the database**  
+- Open **phpMyAdmin** at [http://localhost/phpmyadmin](http://localhost/phpmyadmin)  
+- Create a new database called `employee_system`  
+- Import `employee_system.sql` from the project folder  
+
+5. **Check database configuration (optional)**  
+Open `db.php` and ensure credentials match your local setup:
+```php
+$servername = "localhost";
+$username = "root";
+$password = ""; // default XAMPP password
+$dbname = "employee_system";
+Run the application
+Open your browser and navigate to:
+
+http://localhost/assignment6/
+
+
+Use the system
+
+Register a new user or login using existing credentials
+
+Access the dashboard, manage employees (Add/Edit/Delete/View)
+
+Logout when done
+
+Optional: Use “Remember Me” to stay logged in for 30 days
+
+GitHub Repository
+
+https://github.com/UbaldeOfficial/employee-management-system
+
+© 2025 Ubalde Official — Employee Management System. All rights reserved.
