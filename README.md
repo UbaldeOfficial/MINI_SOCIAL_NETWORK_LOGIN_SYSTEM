@@ -73,7 +73,7 @@ Open the XAMPP Control Panel and start:
 - MySQL (for database)  
 
 4. **Set up the database**  
-- Open **phpMyAdmin** at [http://localhost/phpmyadmin](http://localhost/phpmyadmin)  
+- Open **phpMyAdmin** at [http://localhost/phpmyadmin](http://127.0.0.1/assignment6)  
 - Create a new database called `employee_system`  
 - Import `employee_system.sql` from the project folder  
 
@@ -91,17 +91,11 @@ http://localhost/assignment6/
 
 
 Use the system
-
 Register a new user or login using existing credentials
-
 Access the dashboard, manage employees (Add/Edit/Delete/View)
-
 Logout when done
-
 Optional: Use “Remember Me” to stay logged in for 30 days
-
 GitHub Repository
-
 https://github.com/UbaldeOfficial/employee-management-system
 
 © 2025 Ubalde Official — Employee Management System. All rights reserved.
