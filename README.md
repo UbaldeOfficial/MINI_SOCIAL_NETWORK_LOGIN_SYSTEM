@@ -1,101 +1,90 @@
-# Employee Management System
+# Mini Social Network Login System + Employee CRUD
 
-A PHP-based Employee Management System with CRUD functionality, authentication, and session/cookie security. This project is developed for **RP Tumba College**, Module: **Develop Backend using PHP (Level 6, Year 2).**
-
----
-
-## Features
-- User registration and login
-- Password hashing and verification
-- Session-based access control for protected pages
-- Optional "Remember Me" functionality using cookies
-- CRUD operations for employees:
-  - Add Employee
-  - Edit Employee
-  - Delete Employee
-  - View All Employees
-- Dashboard with welcome message and links
-- Secure authentication and prevention of session fixation
-- Data validation and sanitization
+This project is a simplified Facebook-style social network login system that redirects to an Employee CRUD system. It was developed as **Assignment 7** for the module **Backend Using PHP**.
 
 ---
 
-## Files Included
-- `add_employee.php` — Add new employees  
-- `auth_check.php` — Checks if user is logged in  
-- `dashboard.php` — Main dashboard page  
-- `db.php` — Database connection  
-- `delete_employee.php` — Delete an employee  
-- `edit_employee.php` — Edit employee details  
-- `employee_system.sql` — Database export  
-- `login.php` — Login page  
-- `logout.php` — Logout functionality  
-- `register.php` — User registration page  
-- `view_employees.php` — View all employees  
-- `README.md` — Project documentation  
+## Student Information
+
+- **Name:** Ubalde IBYIMANIKORA  
+- **Registration Number:** 24RP05770  
+- **Level & Year:** Year 2 (Y2)  
+- **Program:** ITB IT Program  
+- **Department:** ICT Department  
 
 ---
 
-## How Sessions Were Used
-- Sessions are started on all protected pages to check if the user is logged in.  
-- `auth_check.php` is included on every CRUD page to prevent unauthorized access.  
-- Session IDs are regenerated on login to prevent session fixation.  
+## Features Implemented
+
+- **User Sign Up** with validation (username, email, password, confirm password)  
+- **User Sign In** with validation (username/email + password)  
+- **Google Login Simulation** (mocked; no real API required)  
+- **Redirect to Employee CRUD system** after successful login  
+- **Employee CRUD Operations:**  
+  - Add Employee  
+  - Edit Employee  
+  - Delete Employee  
+  - View Employees  
+- **Logout Functionality**  
+- **Dashboard UI** inspired by Facebook style  
 
 ---
 
-## How Cookies Were Used
-- Optional "Remember Me" cookie stores a selector and validator for persistent login.  
-- Validator is hashed before saving to the database.  
-- Cookie expires after 30 days for security.  
+## File Structure
+
+/add_employee -> Add Employee page
+/auth_check -> Check login session
+/dashboard -> Main dashboard after login
+/db -> Database connection file
+/delete_employee -> Delete employee page
+/edit_employee -> Edit employee page
+/employee_system -> Database icon / employee DB folder
+/fb_auth_check -> Facebook login session check
+/fb_dashboard -> Facebook-style dashboard
+/fb_google_mock -> Google login simulation
+/fb_login -> Facebook-style login page
+/fb_logo.png -> Facebook logo image
+/fb_logout -> Facebook logout page
+/fb_register -> Facebook-style registration page
+/login -> Login page
+/logout -> Logout page
+/register -> Registration page
+/view_employees -> View employees page
+README.md -> This file
 
 ---
 
-## How Authentication is Secured
-- Passwords are stored hashed using `password_hash()` (PHP).  
-- Prepared statements are used for all database queries to prevent SQL injection.  
-- Only logged-in users can access CRUD pages.  
-- Input validation and sanitization are applied to all forms.  
+## How to Run
+
+1. Import the **`employee_system` database** using `db.sql` or your exported SQL file.  
+2. Update database credentials in `db/config.php` (or `db` folder connection file).  
+3. Open `login.php` in your browser.  
+4. Use Sign Up or Sign In to access the system.  
+5. After login, you will be redirected to the **Employee CRUD system**.  
+6. Use CRUD operations to manage employees.
 
 ---
 
-## How to Run Locally
-1. **Install XAMPP**  
-   Download and install [XAMPP](https://www.apachefriends.org/) (includes Apache and MySQL).  
+## Screenshots
 
-2. **Copy project folder**  
-   Place the `assignment6` folder into your XAMPP `htdocs` directory:  
+Include screenshots of:
 
-C:\xampp\htdocs\assignment6
+- Sign Up page  
+- Sign In page  
+- Facebook-style Dashboard  
+- Employee CRUD pages (Add, Edit, Delete, View)  
 
-3. **Start XAMPP services**  
-Open the XAMPP Control Panel and start:  
-- Apache (for PHP)  
-- MySQL (for database)  
+---
 
-4. **Set up the database**  
-- Open **phpMyAdmin** at [http://localhost/phpmyadmin](http://127.0.0.1/assignment6)  
-- Create a new database called `employee_system`  
-- Import `employee_system.sql` from the project folder  
+## Notes
 
-5. **Check database configuration (optional)**  
-Open `db.php` and ensure credentials match your local setup:
-```php
-$servername = "localhost";
-$username = "root";
-$password = ""; // default XAMPP password
-$dbname = "employee_system";
-Run the application
-Open your browser and navigate to:
+- Google Login is **simulated**; no real Google API is used.  
+- UI is **inspired by Facebook**, not copied.  
+- Make sure PHP and MySQL are correctly configured on your local server (XAMPP/WAMP/LAMP).  
 
-http://localhost/assignment6/
+---
 
-
-Use the system
-Register a new user or login using existing credentials
-Access the dashboard, manage employees (Add/Edit/Delete/View)
-Logout when done
-Optional: Use “Remember Me” to stay logged in for 30 days
-GitHub Repository
-https://github.com/UbaldeOfficial/employee-management-system
-
-© 2025 Ubalde Official — Employee Management System. All rights reserved.
+**Author:** Ubalde IBYIMANIKORA  
+**Submission:** Assignment 7  
+**Module:** Backend Using PHP  
+**Level & Year:** Y2, ITB IT Program, ICT Department

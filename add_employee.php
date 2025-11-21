@@ -1,19 +1,15 @@
 <?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
-
-include "db.php";
+include "auth_check.php"; // ensures only logged-in users can access
+include "db.php";         // database connection
 
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name       = $_POST['name'];
-    $position   = $_POST['position'];
-    $department = $_POST['department'];
-    $salary     = $_POST['salary'];
+    // Escape inputs to prevent SQL issues
+    $name       = $conn->real_escape_string($_POST['name']);
+    $position   = $conn->real_escape_string($_POST['position']);
+    $department = $conn->real_escape_string($_POST['department']);
+    $salary     = $conn->real_escape_string($_POST['salary']);
 
     $sql = "INSERT INTO employees (name, position, department, salary) 
             VALUES ('$name', '$position', '$department', '$salary')";
@@ -30,6 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Add Employee</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f2f5; padding: 30px; }
+        form { background-color: white; padding: 20px; border-radius: 5px; max-width: 500px; }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; }
+        button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #218838; }
+        a { display: inline-block; margin-top: 10px; }
+    </style>
 </head>
 <body>
 
@@ -37,13 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="POST">
     Name:<br>
-    <input type="text" name="name" required><br><br>
+    <input type="text" name="name" required><br>
 
     Position:<br>
-    <input type="text" name="position" required><br><br>
+    <input type="text" name="position" required><br>
 
     Department:<br>
-    <input type="text" name="department" required><br><br>
+    <input type="text" name="department" required><br>
 
     Salary:<br>
     <input type="number" step="0.01" name="salary" required><br><br>
@@ -53,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <p style="color:green;"><?php echo $message; ?></p>
 
-<br>
 <a href="dashboard.php">Back to Dashboard</a>
 
 </body>

@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = ""; // leave empty if no password
+$pass = "";
 $db   = "employee_system";
 
 $conn = new mysqli($host, $user, $pass, $db);

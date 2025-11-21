@@ -1,6 +1,8 @@
-<?php include "auth_check.php"; ?>
-<?php include "db.php"; ?>
-
+<?php
+// Include session check and database connection
+include "auth_check.php"; // ensures only logged-in users can access
+include "db.php";         // database connection
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,47 +10,68 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
+            background-color: #f0f2f5;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #007bff;
+            background-color: #1877f2; /* Facebook-style blue */
             color: white;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 16px;
+        }
+        .logout-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logout-btn:hover {
+            background-color: #c82333;
         }
         .container {
             padding: 30px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
         }
-        a.button {
+        .buttons a {
             display: inline-block;
-            margin: 10px 0;
+            margin: 10px 10px 10px 0;
             padding: 10px 20px;
             background-color: #28a745;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
         }
-        a.button:hover {
+        .buttons a:hover {
             background-color: #218838;
         }
-        .logout {
-            background-color: #dc3545;
-        }
-        .logout:hover {
-            background-color: #c82333;
-        }
         .stats {
-            margin-top: 20px;
+            margin-top: 30px;
             background-color: white;
             padding: 20px;
             border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .stats h3 {
             margin-top: 0;
+            color: #333;
         }
         table {
             width: 100%;
@@ -59,11 +82,11 @@
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 8px;
+            padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #007bff;
+            background-color: #1877f2;
             color: white;
         }
     </style>
@@ -71,14 +94,16 @@
 <body>
 
 <header>
-    <h1>Welcome to the Employee Management System</h1>
-    <p>Hello, <strong><?php echo $_SESSION['username']; ?></strong>! Manage your employees efficiently.</p>
+    <h1>Employee Management System</h1>
+    <p>Welcome, <strong><?php echo $_SESSION['username']; ?></strong>! Manage your employees efficiently.</p>
+    <a href="fb_login.php" class="logout-btn">Logout</a>
 </header>
 
 <div class="container">
-    <a href="add_employee.php" class="button">Add Employee</a>
-    <a href="view_employees.php" class="button">View All Employees</a>
-    <a href="logout.php" class="button logout">Logout</a>
+    <div class="buttons">
+        <a href="add_employee.php">Add Employee</a>
+        <a href="view_employees.php">View All Employees</a>
+    </div>
 
     <div class="stats">
         <h3>System Stats</h3>
