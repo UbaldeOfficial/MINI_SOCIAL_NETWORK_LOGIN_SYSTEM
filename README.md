@@ -65,21 +65,12 @@ README.md -> This file
 
 ---
 
-## Screenshots
 
-Include screenshots of:
-
-- Sign Up page  
-- Sign In page  
-- Facebook-style Dashboard  
-- Employee CRUD pages (Add, Edit, Delete, View)  
-
----
 
 ## Notes
 
 - Google Login is **simulated**; no real Google API is used.  
-- UI is **inspired by Facebook**, not copied.  
+- UI is **inspired by Facebook** 
 - Make sure PHP and MySQL are correctly configured on your local server (XAMPP/WAMP/LAMP).  
 
 ---
